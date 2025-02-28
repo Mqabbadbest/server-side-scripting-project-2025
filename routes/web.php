@@ -17,4 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/students', function () {
+    return view('students/index');
+});
+
+Route::get('/students/create', function () {
+    return view('students/create');
+});
+
+Route::get('/colleges', function () {
+    return view('colleges/index');
+});
+
+Route::get('/colleges/create', function () {
+    return view('colleges/create');
+});
 

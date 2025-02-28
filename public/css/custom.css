@@ -75,8 +75,8 @@ body {
 }
 
 .btn-success:hover {
-	background-color: #0056b3; /* Darker blue for hover */
-	border-color: #0056b3; /* Darker blue for hover */
+	background-color: #007bff; /* Darker blue for hover */
+	border-color: #007bff; /* Darker blue for hover */
 }
 
 .btn-outline-light {
@@ -97,4 +97,56 @@ body {
 .btn-outline-danger:hover {
 	background-color: #ff4444;
 	color: #ffffff;
+}
+
+.add-book-button {
+    position: fixed; /* Keeps it in the same spot when scrolling */
+    top: 100px; /* Centers it vertically on the page */
+    right: 0px; /* Aligns it to the right side */
+    transform: translateY(-50%); /*Centers it exactly in the middle vertically*/
+    z-index: 1000; /* Ensure it appears above other elements */
+    transition: transform 0.3s ease-in-out; /* Smooth slide effect */
+}
+
+.add-book-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #007bff; /* Button background color */
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth hover effect */
+    width: 60px; /* Initially only show the icon */
+    overflow: hidden; /* Hide the text */
+}
+
+.add-book-button a:hover {
+    width: 250px; /* Expand to show the full text */
+    background-color: #007bff; /* Change background color on hover */
+}
+
+.add-book-button .add-icon {
+    font-size: 1.7rem; /* Size of the + icon */
+    margin-right: 10px; /*Space between icon and text*/
+    margin-left: 20px;
+}
+
+.add-book-button .add-text {
+    font-size: 0rem; /* Size of the text */
+    opacity: 0; /* Hide text initially */
+    transition: opacity 0.3s ease-in-out; /* Smooth text fade-in */
+}
+
+.add-book-button a:hover .add-text {
+    font-size: 1rem; /* Size of the text */
+    opacity: 1; /* Show text on hover */
+    transition: font-size 0.3s ease-in-out; /* Smooth text fade-in */
+}
+
+/* Button Hover Effect */
+.add-book-button a:hover .icon {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+    transition: transform 0.2s ease-in-out;
 }
