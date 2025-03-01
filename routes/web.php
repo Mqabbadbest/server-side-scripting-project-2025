@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CollegeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,19 +34,15 @@ Route::get('/students/view', function () {
     return view('students/view');
 });
 
-Route::get('/colleges', function () {
-    return view('colleges/index');
-});
+Route::get('/colleges', [CollegeController::class, 'index'])->name('colleges.index');
+Route::get('/colleges/create', [CollegeController::class, 'create'])->name('colleges.create');
+Route::post('/colleges/store', [CollegeController::class, 'store'])->name('colleges.store');
+Route::get('/colleges/{id}/edit',[CollegeController::class, 'edit'])->name('colleges.edit'); 
+Route::put('/colleges/{id}',[CollegeController::class, 'update'])->name('colleges.update');
+Route::delete('/colleges/{id}',[CollegeController::class, 'destroy'])->name('colleges.destroy');
+Route::get('/colleges/{id}/view',[CollegeController::class, 'view'])->name('colleges.view');
 
-Route::get('/colleges/create', function () {
-    return view('colleges/create');
-});
-
-Route::get('/colleges/edit', function () {
-    return view('colleges/edit');
-});
-
-Route::get('/colleges/view', function () {
-    return view('colleges/view');
-});
+// Route::get('/colleges/view', function () {
+//     return view('colleges/view');
+// });
 

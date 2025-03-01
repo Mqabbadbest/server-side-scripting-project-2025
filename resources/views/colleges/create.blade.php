@@ -9,7 +9,7 @@
                             <strong>Add New College</strong>
                         </div>
                         <div class="card-body rounded">
-                            <form action="#" method="POST">
+                            <form action="{{ route('colleges.store') }}" method="POST">
                                 @csrf
                                 @include('colleges._form')
                             </form>
