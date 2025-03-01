@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <!-- Custom CSS -->
     <link href="{{asset('css/custom.css')  }}" rel="stylesheet">
-    <!-- <link href="{{asset('css/bootstrap.min.css')  }}" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -36,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbar-toggler">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="/students" class="nav-link">Students</a></li>
-                    <li class="nav-item"><a href="/colleges" class="nav-link">Colleges</a></li>
+                    <li class="nav-item"><a href="{{route('colleges.index')}}" class="nav-link">Colleges</a></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +47,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    @stack('scripts')
 </body>
 
 </html>

@@ -14,21 +14,21 @@
                                     <div class="form-group row">
                                         <label for="name" class="col-md-3 col-form-label text-muted">Name</label>
                                         <div class="col-md-9">
-                                            <p class="form-control-plaintext text-white">Alfred</p>
+                                            <p class="form-control-plaintext text-white">{{$college->name  }}</p>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="address" class="col-md-3 col-form-label text-muted">Address</label>
                                         <div class="col-md-9">
-                                            <p class="form-control-plaintext  text-white">Lorem ipsum dolor</p>
+                                            <p class="form-control-plaintext  text-white">{{ $college->address }}</p>
                                         </div>
                                     </div>
                                     <hr style="background-color: #6c757d;">
                                     <div class="form-group row mb-0">
                                         <div class="col-md-9 offset-md-3">
-                                            <a href="#" class="btn btn-info" style="background-color: #007bff;">Edit</a>
-                                            <a href="#" class="btn btn-outline-danger">Delete</a>
-                                            <a href="index.html" class="btn btn-outline-secondary">Cancel</a>
+                                            <a href="{{ route('colleges.edit', $college->id ) }}" class="btn btn-info" style="background-color: #007bff;">Edit</a>
+                                            <a href="{{ route('colleges.destroy', $college->id) }}" class="btn btn-outline-danger">Delete</a>
+                                            <a onclick="window.history.back()" class="btn btn-outline-secondary">Cancel</a>
                                         </div>
                                     </div>
                                 </div>

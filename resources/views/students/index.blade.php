@@ -5,7 +5,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="add-book-button">
+                <div class="add-button">
                     <a href="/students/create">
                         <span class="add-icon">
                             +
@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="card bg-dark text-white mt-3">
+                    <div class="card text-white mt-3" style="background-color: #007bff;">
                         <table class="table table-dark table-hover" id="contactsTable">
                             <thead>
                                 <tr>
@@ -81,8 +81,8 @@
                                     <td>1990-01-02</td>
                                     <td>Company one</td>
                                     <td width="150">
-                                        <a href="/students/edit" class="btn btn-sm btn-circle btn-outline-light" title="Edit"><i
-                                                class="fa fa-edit"></i></a>
+                                        <a href="/students/edit" class="btn btn-sm btn-circle btn-outline-light"
+                                            title="Edit"><i class="fa fa-edit"></i></a>
                                         <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete"
                                             onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
                                     </td>
