@@ -24,11 +24,10 @@
                                 <div class="col-md-2">
                                     <div class="row">
                                         <div class="col">
-                                            <label for="companyFilter" class="form-label">Sort by</label>
+                                            <label for="companyFilter" class="form-label">Sorting by</label>
                                             <div class="input-group mb-3">
                                                 <select class="custom-select bg-dark text-white">
-                                                    <option value="" selected>ID (ASC)</option>
-                                                    <option value="1">ID (DESC)</option>
+                                                    <option value="" selected>Sort Options</option>
                                                     <option value="2">Name (A-Z)</option>
                                                     <option value="3">Name (Z-A)</option>
                                                 </select>
@@ -61,7 +60,7 @@
                         <table class="table table-dark table-hover" id="contactsTable">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">StudentID</th>
                                     <th scope="col">
                                         Name </th>
                                     <!-- <th scope="col">Last Name</th> -->
@@ -73,7 +72,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr onclick="window.location.href='hello'">
+                                <tr onclick="window.location.href='/students/view'">
                                     <th scope="row">1</th>
                                     <td>Alfred</td>
                                     <!-- <td>Kuhlman</td> -->
@@ -82,7 +81,7 @@
                                     <td>1990-01-02</td>
                                     <td>Company one</td>
                                     <td width="150">
-                                        <a href="form.html" class="btn btn-sm btn-circle btn-outline-light" title="Edit"><i
+                                        <a href="/students/edit" class="btn btn-sm btn-circle btn-outline-light" title="Edit"><i
                                                 class="fa fa-edit"></i></a>
                                         <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete"
                                             onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>

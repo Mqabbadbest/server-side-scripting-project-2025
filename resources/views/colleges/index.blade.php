@@ -20,7 +20,7 @@
                         <table class="table table-dark table-hover" id="contactsTable">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">CollegeID</th>
                                     <th scope="col">
                                         Title </th>
                                     <!-- <th scope="col">Last Name</th> -->
@@ -29,13 +29,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr onclick="window.location.href='hello'">
+                                <tr onclick="window.location.href='/colleges/view'">
                                     <th scope="row">1</th>
                                     <td>Alfred</td>
                                     <!-- <td>Kuhlman</td> -->
                                     <td>alfred@test.com</td>
                                     <td width="150">
-                                        <a href="form.html" class="btn btn-sm btn-circle btn-outline-light" title="Edit"><i
+                                        <a href="/colleges/edit" class="btn btn-sm btn-circle btn-outline-light" title="Edit"><i
                                                 class="fa fa-edit"></i></a>
                                         <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete"
                                             onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>

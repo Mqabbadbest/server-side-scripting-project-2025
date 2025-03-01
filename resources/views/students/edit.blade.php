@@ -11,7 +11,7 @@
                         <div class="card-body rounded">
                             <form action="#" method="POST">
                                 @csrf
-                                @include('colleges._form')
+                                @include('students._form')
                             </form>
                         </div>
                     </div>
