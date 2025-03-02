@@ -10,8 +10,16 @@ use Log;
 class StudentController extends Controller
 {
     public function index(){
-        $students = Student::all();
-        return view('students.index', compact('students'));
+        $colleges = College::orderBy('name')->pluck('name', 'id')->prepend('All Colleges', '');
+        $students = Student::where(function($query){
+            if($college_id = request('college_id')){
+                $query->where('college_id', $college_id);
+            }
+            // if($name = request('name')){
+            //     $query->where('name', 'LIKE', "%$name%");
+            // }
+        })->orderBy('id')->get();
+        return view('students.index', compact('students', 'colleges'));
     }
 
     public function create(){

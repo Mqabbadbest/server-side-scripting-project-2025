@@ -31,7 +31,7 @@
                                     <div class="form-group row">
                                         <label for="phone" class="col-md-3 col-form-label text-muted">Phone</label>
                                         <div class="col-md-9">
-                                            <p class="form-control-plaintext  text-white">{{ $student->name }}</p>
+                                            <p class="form-control-plaintext  text-white">{{ $student->phone }}</p>
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -46,63 +46,57 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="companyFilter" class="form-label">Filter by College</label>
-                                            <div class="input-group mb-3">
-                                                <select class="custom-select bg-dark text-white">
-                                                    <option value="" selected>All Companies</option>
-                                                    <option value="1">Company One</option>
-                                                    <option value="2">Company Two</option>
-                                                    <option value="3">Company Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                    @include('students._filter')
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="card text-white mt-3" style="background-color: #007bff;">
-                        <table class="table table-dark table-hover" id="studentsTable">
-                            <thead>
-                                <tr>
-                                    <th scope="col" style="width: 50px;">ID</th>
-                                    <th scope="col" style="width: 110px;">Name</th>
-                                    <th scope="col" style="width: 210px">Email</th>
-                                    <th scope="col" style="width: 100px;">Phone</th>
-                                    <th scope="col" style="width: 90px;">DOB</th>
-                                    <th scope="col" style="width: 210px;">College</th>
-                                    <th scope="col" style="text-align: center; width:100px;">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($students as $index => $student)
-                                    <tr onclick="window.location = '{{ route('students.view', $student->id)}}'" style="cursor: pointer;">
-                                        <th scope="row" style="width: 50px;">{{ $student->id }}</th>
-                                        <td style="width: 110px;">{{ $student->name }}</td>
-                                        <td style="width: 210px">{{ $student->email }}</td>
-                                        <td style="width: 100px;">{{ $student->phone }}</td>
-                                        <td style="width: 90px;">{{ $student->dob }}</td>
-                                        <td style="width: 210px;">{{ $student->college->name }}</td>
-                                        <td style="width:100px;">
-                                            <a href="{{ route('students.edit', $student->id) }}"
-                                                class="btn btn-sm btn-circle btn-outline-light" title="Edit"><i
-                                                    class="fa fa-edit"></i></a>
-                                            <a href="{{ route('students.destroy', $student->id) }}"
-                                                class="btn btn-sm btn-circle btn-outline-danger" title="Delete"
-                                                id="btn-delete"><i class="fa fa-times"></i></a>
-                                        </td>
+                        @if($students->count() > 0)
+                            <table class="table table-dark table-hover" id="studentsTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 50px;">ID</th>
+                                        <th scope="col" style="width: 110px;">Name</th>
+                                        <th scope="col" style="width: 210px">Email</th>
+                                        <th scope="col" style="width: 100px;">Phone</th>
+                                        <th scope="col" style="width: 90px;">DOB</th>
+                                        <th scope="col" style="width: 210px;">College</th>
+                                        <th scope="col" style="text-align: center; width:100px;">Actions</th>
                                     </tr>
-                                @endforeach
-                                <form id="delete-student-form" method="POST" style="display: none;">
-                                    @csrf
-                                    @method('DELETE')
-                                </form>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($students as $index => $student)
+                                        <tr onclick="window.location = '{{ route('students.view', $student->id)}}'"
+                                            style="cursor: pointer;">
+                                            <th scope="row" style="width: 50px;">{{ $student->id }}</th>
+                                            <td style="width: 110px;">{{ $student->name }}</td>
+                                            <td style="width: 210px">{{ $student->email }}</td>
+                                            <td style="width: 100px;">{{ $student->phone }}</td>
+                                            <td style="width: 90px;">{{ $student->dob }}</td>
+                                            <td style="width: 210px;">{{ $student->college->name }}</td>
+                                            <td style="width:100px;">
+                                                <a href="{{ route('students.edit', $student->id) }}"
+                                                    class="btn btn-sm btn-circle btn-outline-light" title="Edit"><i
+                                                        class="fa fa-edit"></i></a>
+                                                <a href="{{ route('students.destroy', $student->id) }}"
+                                                    class="btn btn-sm btn-circle btn-outline-danger" title="Delete"
+                                                    id="btn-delete"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    <form id="delete-student-form" method="POST" style="display: none;">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
+                                </tbody>
+                            </table>
+                        @else
+                            <div class="card-body rounded">
+                                <h5 class="text-center mt-1">No students found.</h5>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
