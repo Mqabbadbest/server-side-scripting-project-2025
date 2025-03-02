@@ -9,7 +9,7 @@
                             <strong>Add New Student</strong>
                         </div>
                         <div class="card-body rounded">
-                            <form action="#" method="POST">
+                            <form action="{{ route('students.store') }}" method="POST">
                                 @csrf
                                 @include('students._form')
                             </form>

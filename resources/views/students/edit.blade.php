@@ -9,7 +9,8 @@
                             <strong>Edit Student</strong>
                         </div>
                         <div class="card-body rounded">
-                            <form action="#" method="POST">
+                            <form action="{{ route('students.update', $student->id) }}" method="POST">
+                                @method('PUT')
                                 @csrf
                                 @include('students._form')
                             </form>

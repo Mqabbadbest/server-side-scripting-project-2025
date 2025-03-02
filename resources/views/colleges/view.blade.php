@@ -1,4 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.main')#
+
+@push('scripts')
+    <script src="{{ asset('js/college.js') }}"></script>
+@endpush
+
 @section('content')
     <main class="py-5">
         <div class="container">
@@ -26,10 +31,16 @@
                                     <hr style="background-color: #6c757d;">
                                     <div class="form-group row mb-0">
                                         <div class="col-md-9 offset-md-3">
-                                            <a href="{{ route('colleges.edit', $college->id ) }}" class="btn btn-info" style="background-color: #007bff;">Edit</a>
-                                            <a href="{{ route('colleges.destroy', $college->id) }}" class="btn btn-outline-danger">Delete</a>
+                                            <a href="{{ route('colleges.edit', $college->id) }}" class="btn btn-info"
+                                                style="background-color: #007bff;">Edit</a>
+                                            <a href="{{ route('colleges.destroy', $college->id) }}"
+                                                class="btn btn-outline-danger" id="btn-delete">Delete</a>
                                             <a onclick="window.history.back()" class="btn btn-outline-secondary">Cancel</a>
                                         </div>
+                                        <form id="delete-college-form" method="POST" style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
                                     </div>
                                 </div>
                             </div>

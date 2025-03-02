@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CollegeController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,22 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/students', function () {
-    return view('students/index');
-});
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
-Route::get('/students/create', function () {
-    return view('students/create');
-});
+Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+Route::post('/students/store', [StudentController::class, 'store'])->name('students.store');
 
-Route::get('/students/edit', function () {
-    return view('students/edit');
-});
-
-Route::get('/students/view', function () {
-    return view('students/view');
-});
-
+Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
+Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
+Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
+Route::get('/students/{id}/view', [StudentController::class, 'view'])->name('students.view');
 Route::get('/colleges', [CollegeController::class, 'index'])->name('colleges.index');
 Route::get('/colleges/create', [CollegeController::class, 'create'])->name('colleges.create');
 Route::post('/colleges/store', [CollegeController::class, 'store'])->name('colleges.store');
