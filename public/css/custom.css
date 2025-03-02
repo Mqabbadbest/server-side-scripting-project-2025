@@ -218,3 +218,24 @@ body {
 	-moz-appearance: none;
 
 }
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(28, 29, 32), rgb(38, 76, 137), rgb(46, 125, 238));
+    backdrop-filter: blur(5px);
+}
+
+.welcome-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
