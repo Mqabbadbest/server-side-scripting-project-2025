@@ -9,26 +9,38 @@ use Log;
 
 class StudentController extends Controller
 {
-    public function index(){
+    public function index()
+    {
+        $sort_options = [
+            "" => "Sorting Options",
+            "asc" => "Name (A-Z)",
+            "desc" => "Name (Z-A)"
+        ];
         $colleges = College::orderBy('name')->pluck('name', 'id')->prepend('All Colleges', '');
-        $students = Student::where(function($query){
-            if($college_id = request('college_id')){
+        $students = Student::where(function ($query) {
+            if ($college_id = request('college_id')) {
                 $query->where('college_id', $college_id);
             }
-            // if($name = request('name')){
-            //     $query->where('name', 'LIKE', "%$name%");
-            // }
-        })->orderBy('id')->get();
-        return view('students.index', compact('students', 'colleges'));
+        })->get();
+
+        if (request('sort') == 'asc') {
+            $students = $students->sortBy('name');
+        } elseif (request('sort') == 'desc') {
+            $students = $students->sortByDesc('name');
+        }
+
+        return view('students.index', compact('students', 'colleges', 'sort_options'));
     }
 
-    public function create(){
+    public function create()
+    {
         $student = new Student();
         $colleges = College::orderBy('name')->pluck('name', 'id')->prepend('Select College', '');
         return view('students.create', compact('student', 'colleges'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         Log::info($request->all());
         $request->validate([
             'name' => 'required',
@@ -52,13 +64,15 @@ class StudentController extends Controller
         return redirect()->route('students.index');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $student = Student::findOrFail($id);
         $colleges = College::orderBy('name')->pluck('name', 'id')->prepend('Select College', '');
         return view('students.edit', compact('student', 'colleges'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         Log::info($request);
         $student = Student::findOrFail($id);
         $request->validate([
@@ -83,14 +97,16 @@ class StudentController extends Controller
         return redirect()->route('students.index');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $student = Student::findOrFail($id);
         $student->delete();
         Log::info('Student deleted: ' . $id);
         return redirect()->route('students.index');
     }
 
-    public function view($id){
+    public function view($id)
+    {
         $student = Student::findOrFail($id);
         return view('students.view', compact('student'));
     }
