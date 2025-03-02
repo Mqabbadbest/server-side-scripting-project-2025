@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/students', function () {
     return view('students/index');
@@ -41,8 +41,3 @@ Route::get('/colleges/{id}/edit',[CollegeController::class, 'edit'])->name('coll
 Route::put('/colleges/{id}',[CollegeController::class, 'update'])->name('colleges.update');
 Route::delete('/colleges/{id}',[CollegeController::class, 'destroy'])->name('colleges.destroy');
 Route::get('/colleges/{id}/view',[CollegeController::class, 'view'])->name('colleges.view');
-
-// Route::get('/colleges/view', function () {
-//     return view('colleges/view');
-// });
-

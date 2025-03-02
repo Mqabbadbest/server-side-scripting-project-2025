@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Student and College Management System</title>
+    <link rel="icon" href="{{ asset('college.ico') }}" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -23,8 +24,12 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand text-uppercase" href="index.html">
+
+            <!-- <a class="navbar-brand text-uppercase" href="index.html">
                 Student and College Management System
+            </a> -->
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('college.ico') }}" alt="logo" style="width: 40px; height: 40px;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggler"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
