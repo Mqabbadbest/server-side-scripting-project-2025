@@ -1,4 +1,4 @@
-@extends('layouts.main')#
+@extends('layouts.main')
 
 @push('scripts')
     <script src="{{ asset('js/college.js') }}"></script>

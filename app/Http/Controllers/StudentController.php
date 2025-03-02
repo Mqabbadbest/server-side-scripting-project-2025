@@ -60,13 +60,23 @@ class StudentController extends Controller
             'college_id.exists' => 'College is invalid.'
         ]);
         Log::info('Student data is valid');
-        Student::create($request->all());
-        return redirect()->route('students.index');
+        try {
+            Student::create($request->all());
+        } catch (\Exception $e) {
+            Log::error('Error creating student: ' . $e->getMessage());
+            return redirect()->back()->with('danger', 'Error creating student: ' . $e->getMessage());
+        }
+        return redirect()->route('students.index')->with('message', 'Student created successfully.');
     }
 
     public function edit($id)
     {
-        $student = Student::findOrFail($id);
+        try {
+            $student = Student::findOrFail($id);
+        } catch (\Exception $e) {
+            Log::error('Error finding student: ' . $e->getMessage());
+            return redirect()->back()->with('danger', 'Error finding student: ' . $e->getMessage());
+        }
         $colleges = College::orderBy('name')->pluck('name', 'id')->prepend('Select College', '');
         return view('students.edit', compact('student', 'colleges'));
     }
@@ -74,7 +84,12 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         Log::info($request);
-        $student = Student::findOrFail($id);
+        try {
+            $student = Student::findOrFail($id);
+        } catch (\Exception $e) {
+            Log::error('Error finding student: ' . $e->getMessage());
+            return redirect()->back()->with('danger', 'Error finding student: ' . $e->getMessage());
+        }
         $request->validate([
             'name' => 'required',
             'email' => ['required', 'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'],
@@ -93,21 +108,41 @@ class StudentController extends Controller
             'college_id.exists' => 'College is invalid.'
         ]);
         Log::info('Student data is valid');
-        $student->update($request->all());
-        return redirect()->route('students.index');
+        try {
+            $student->update($request->all());
+        } catch (\Exception $e) {
+            Log::error('Error updating student: ' . $e->getMessage());
+            return redirect()->back()->with('danger', 'Error updating student: ' . $e->getMessage());
+        }
+        return redirect()->route('students.index')->with('message', 'Student updated successfully.');
     }
 
     public function destroy($id)
     {
-        $student = Student::findOrFail($id);
-        $student->delete();
+        try {
+            $student = Student::findOrFail($id);
+        } catch (\Exception $e) {
+            Log::error('Error finding student: ' . $e->getMessage());
+            return redirect()->back()->with('danger', 'Error finding student: ' . $e->getMessage());
+        }
+        try {
+            $student->delete();
+        } catch (\Exception $e) {
+            Log::error('Error deleting student: ' . $e->getMessage());
+            return redirect()->back()->with('danger', 'Error deleting student: ' . $e->getMessage());
+        }
         Log::info('Student deleted: ' . $id);
-        return redirect()->route('students.index');
+        return redirect()->route('students.index')->with('message', 'Student deleted successfully.');
     }
 
     public function view($id)
     {
-        $student = Student::findOrFail($id);
+        try {
+            $student = Student::findOrFail($id);
+        } catch (\Exception $e) {
+            Log::error('Error finding student: ' . $e->getMessage());
+            return redirect()->back()->with('danger', 'Error finding student: ' . $e->getMessage());
+        }
         return view('students.view', compact('student'));
     }
 }
