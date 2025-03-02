@@ -31,19 +31,7 @@
                             <hr class="bg-light">
                             <div class="row" style="justify-content: space-between;">
                                 <div class="col-md-2">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="companyFilter" class="form-label">Sorting by</label>
-                                            <div class="input-group mb-3">
-                                                <select class="custom-select bg-dark text-white">
-                                                    <option value="" selected>Sort Options</option>
-                                                    <option value="2">Name (A-Z)</option>
-                                                    <option value="3">Name (Z-A)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                    @include('students._sort')
                                 </div>
                                 <div class="col-md-6">
                                     @include('students._filter')
