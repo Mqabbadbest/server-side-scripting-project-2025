@@ -8,6 +8,21 @@
     <!-- content -->
     <main class="py-4 bg-dark">
         <div class="container">
+            @if($message = session('message'))
+                <div class="alert alert-success" id="msg" style="transition: opacity 0.5s ease-out;">
+                    {{$message}}
+                </div>
+            @endif
+            @if($message = session('alert'))
+                <div class="alert alert-warning" id="alert" style="transition: opacity 0.5s ease-out;">
+                    {{$message}}
+                </div>
+            @endif
+            @if($message = session('danger'))
+                <div class="alert alert-danger" id="danger" style="transition: opacity 0.5s ease-out;">
+                    {{$message}}
+                </div>
+            @endif
             <div class="row">
                 <div class="add-button">
                     <a href="{{ route('students.create') }}">
@@ -17,6 +32,7 @@
                         <span class="add-text">Add Student</span>
                     </a>
                 </div>
+
                 <div class="col-md-12">
                     <div class="row" style="margin-left: 2px;">
                         <h3>Students</h3>

@@ -7,6 +7,21 @@
 @section('content')
     <main class="py-4 bg-dark">
         <div class="container">
+            @if($message = session('message'))
+                <div class="alert alert-success" id="msg" style="transition: opacity 0.5s ease-out;">
+                    {{$message}}
+                </div>
+            @endif
+            @if($message = session('alert'))
+                <div class="alert alert-warning" id="alert" style="transition: opacity 0.5s ease-out;">
+                    {{$message}}
+                </div>
+            @endif
+            @if($message = session('danger'))
+                <div class="alert alert-danger" id="danger" style="transition: opacity 0.5s ease-out;">
+                    {{$message}}
+                </div>
+            @endif
             <div class="row">
                 <!-- TO CHANGE!!!! -->
                 <div class="add-button">
@@ -35,7 +50,8 @@
                             </thead>
                             <tbody>
                                 @foreach($colleges as $index => $college)
-                                    <tr onclick="window.location='{{ route('colleges.view', $college->id) }}'" style="cursor: pointer;">
+                                    <tr onclick="window.location='{{ route('colleges.view', $college->id) }}'"
+                                        style="cursor: pointer;">
                                         <th scope="row">{{$college->id}}</th>
                                         <td>{{ $college->name }}</td>
                                         <td>{{ $college->address }}</td>
