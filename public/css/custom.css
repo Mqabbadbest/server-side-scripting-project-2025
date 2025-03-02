@@ -13,7 +13,8 @@ body {
 	font-weight: bold;
 	letter-spacing: -1px;
 	font-size: 24px;
-	color: #ffffff; /* Blue accent */
+	color: #ffffff;
+	/* Blue accent */
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -21,7 +22,8 @@ body {
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-	color: #007bff; /* Blue accent */
+	color: #007bff;
+	/* Blue accent */
 }
 
 .card {
@@ -32,12 +34,14 @@ body {
 }
 
 .card-body {
-	background-color: #1f1f1f;	
+	background-color: #1f1f1f;
 }
 
 .card-header {
-	background-color: #007bff; /* Blue accent */
-	color: #ffffff; /* White text for better contrast */
+	background-color: #007bff;
+	/* Blue accent */
+	color: #ffffff;
+	/* White text for better contrast */
 	border-radius: 10px 10px 0 0;
 }
 
@@ -49,8 +53,10 @@ body {
 }
 
 .table-dark thead th {
-	background-color: #007bff; /* Blue accent */
-	color: #ffffff; /* White text for better contrast */
+	background-color: #007bff;
+	/* Blue accent */
+	color: #ffffff;
+	/* White text for better contrast */
 	border: none;
 }
 
@@ -69,14 +75,19 @@ body {
 }
 
 .btn-success {
-	background-color: #007bff; /* Blue accent */
-	border-color: #007bff; /* Blue accent */
-	color: #ffffff; /* White text for better contrast */
+	background-color: #007bff;
+	/* Blue accent */
+	border-color: #007bff;
+	/* Blue accent */
+	color: #ffffff;
+	/* White text for better contrast */
 }
 
 .btn-success:hover {
-	background-color: #007bff; /* Darker blue for hover */
-	border-color: #007bff; /* Darker blue for hover */
+	background-color: #007bff;
+	/* Darker blue for hover */
+	border-color: #007bff;
+	/* Darker blue for hover */
 }
 
 .btn-outline-light {
@@ -100,53 +111,110 @@ body {
 }
 
 .add-button {
-    position: fixed; /* Keeps it in the same spot when scrolling */
-    top: 100px; /* Centers it vertically on the page */
-    right: 0px; /* Aligns it to the right side */
-    transform: translateY(-50%); /*Centers it exactly in the middle vertically*/
-    z-index: 1000; /* Ensure it appears above other elements */
-    transition: transform 0.3s ease-in-out; /* Smooth slide effect */
+	position: fixed;
+	/* Keeps it in the same spot when scrolling */
+	top: 100px;
+	/* Centers it vertically on the page */
+	right: 0px;
+	/* Aligns it to the right side */
+	transform: translateY(-50%);
+	/*Centers it exactly in the middle vertically*/
+	z-index: 1000;
+	/* Ensure it appears above other elements */
+	transition: transform 0.3s ease-in-out;
+	/* Smooth slide effect */
 }
 
 .add-button a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: #007bff; /* Button background color */
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px 0 0 5px; /* Rounded corners on the left */
-    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth hover effect */
-    width: 60px; /* Initially only show the icon */
-    overflow: hidden; /* Hide the text */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	background-color: #007bff;
+	/* Button background color */
+	color: #ffffff;
+	padding: 10px 15px;
+	border-radius: 5px 0 0 5px;
+	/* Rounded corners on the left */
+	transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+	/* Smooth hover effect */
+	width: 60px;
+	/* Initially only show the icon */
+	overflow: hidden;
+	/* Hide the text */
 }
 
 .add-button a:hover {
-    width: 250px; /* Expand to show the full text */
-    background-color: #007bff; /* Change background color on hover */
+	width: 250px;
+	/* Expand to show the full text */
+	background-color: #007bff;
+	/* Change background color on hover */
 }
 
 .add-button .add-icon {
-    font-size: 1.7rem; /* Size of the + icon */
-    margin-right: 10px; /*Space between icon and text*/
-    margin-left: 20px;
+	font-size: 1.7rem;
+	/* Size of the + icon */
+	margin-right: 10px;
+	/*Space between icon and text*/
+	margin-left: 20px;
 }
 
 .add-button .add-text {
-    font-size: 0rem; /* Size of the text */
-    opacity: 0; /* Hide text initially */
-    transition: opacity 0.3s ease-in-out; /* Smooth text fade-in */
+	font-size: 0rem;
+	/* Size of the text */
+	opacity: 0;
+	/* Hide text initially */
+	transition: opacity 0.3s ease-in-out;
+	/* Smooth text fade-in */
 }
 
 .add-button a:hover .add-text {
-    font-size: 1rem; /* Size of the text */
-    opacity: 1; /* Show text on hover */
-    transition: font-size 0.3s ease-in-out; /* Smooth text fade-in */
+	font-size: 1rem;
+	/* Size of the text */
+	opacity: 1;
+	/* Show text on hover */
+	transition: font-size 0.3s ease-in-out;
+	/* Smooth text fade-in */
 }
 
 /* Button Hover Effect */
 .add-button a:hover .icon {
-    transform: scale(1.2); /* Slightly enlarge the icon on hover */
-    transition: transform 0.2s ease-in-out;
+	transform: scale(1.2);
+	/* Slightly enlarge the icon on hover */
+	transition: transform 0.2s ease-in-out;
+}
+
+
+#studentsTable {
+	table-layout: fixed;
+	width: 100%;
+}
+
+
+#studentsTable th,
+#studentsTable td {
+	width: 150px;
+	height: 50px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+#studentsTable td:last-child {
+	width: 150px;
+	text-align: center;
+}
+
+#studentsTable th {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.select-no-arrow {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
 }

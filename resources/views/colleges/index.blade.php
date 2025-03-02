@@ -35,7 +35,7 @@
                             </thead>
                             <tbody>
                                 @foreach($colleges as $index => $college)
-                                    <tr onclick="window.location='{{ route('colleges.view', $college->id) }}'">
+                                    <tr onclick="window.location='{{ route('colleges.view', $college->id) }}'" style="cursor: pointer;">
                                         <th scope="row">{{$college->id}}</th>
                                         <td>{{ $college->name }}</td>
                                         <td>{{ $college->address }}</td>
