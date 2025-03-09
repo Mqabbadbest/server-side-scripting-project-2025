@@ -61,7 +61,7 @@ class CollegeController extends Controller
             Log::error('Error creating college: ' . $e->getMessage());
             return redirect()->route('colleges.index')->with('danger', 'Error creating college: ' . $e->getMessage());
         }
-        return redirect()->route('colleges.index');
+        return redirect()->route('colleges.index')->with('message', 'College created successfully.');
     }
 
     /**
