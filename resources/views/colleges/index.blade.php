@@ -23,7 +23,6 @@
                 </div>
             @endif
             <div class="row">
-                <!-- TO CHANGE!!!! -->
                 <div class="add-button">
                     <a href="{{route('colleges.create')}}">
                         <span class="add-icon">
@@ -42,7 +41,7 @@
                         <table class="table table-dark table-hover" id="collegesTable">
                             <thead>
                                 <tr>
-                                    <th scope="col">CollegeID</th>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Address</th>
                                     <th scope="col">Actions</th>

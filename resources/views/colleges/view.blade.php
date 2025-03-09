@@ -29,8 +29,8 @@
                                         </div>
                                     </div>
                                     <hr style="background-color: #6c757d;">
-                                    <div class="form-group row mb-0">
-                                        <div class="col-md-9 offset-md-3">
+                                    <div class="col-md-9 offset-md-2" style="margin-left: 18.5%;">
+                                        <div class="row justify-content-around">
                                             <a href="{{ route('colleges.edit', $college->id) }}" class="btn btn-info"
                                                 style="background-color: #007bff;">Edit</a>
                                             <a href="{{ route('colleges.destroy', $college->id) }}"

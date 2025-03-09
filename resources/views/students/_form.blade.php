@@ -1,5 +1,3 @@
-<!-- content -->
-
 <div class="row">
     <div class="col-md-12">
         <div class="form-group row mb-5">
@@ -73,11 +71,9 @@
             </div>
         </div>
         <hr style="border-top: 1px solid #fff;">
-        <div class="form-group row mb-0">
-            <div class="col-md-9 offset-md-3">
-                <button type="submit" class="btn btn-primary">Save</button>
+            <div class="row justify-content-around">
+                <button type="submit" class="btn btn-primary">Save Student</button>
                 <a onclick="window.history.back()" class="btn btn-outline-secondary">Cancel</a>
             </div>
-        </div>
     </div>
 </div>
