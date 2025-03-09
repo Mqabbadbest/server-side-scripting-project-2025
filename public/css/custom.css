@@ -113,7 +113,7 @@ body {
 .add-button {
 	position: fixed;
 	/* Keeps it in the same spot when scrolling */
-	top: 100px;
+	top: 120px;
 	/* Centers it vertically on the page */
 	right: 0px;
 	/* Aligns it to the right side */

@@ -2,7 +2,7 @@ document.querySelectorAll('#btn-delete').forEach((button) => {
     button.addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
-        if (confirm('Are you sure?')) {
+        if (confirm('ATTENTION: Are you sure? Any student that is associated with this college will also be deleted.')) {
             let action = this.getAttribute('href');
             let form = document.getElementById('delete-college-form');
             form.setAttribute('action', action);

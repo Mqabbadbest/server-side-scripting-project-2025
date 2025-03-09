@@ -5,7 +5,6 @@
 @endpush
 
 @section('content')
-    <!-- content -->
     <main class="py-4 bg-dark">
         <div class="container">
             @if($message = session('message'))
