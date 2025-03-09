@@ -1,3 +1,8 @@
+/**
+ * It is used to confirm the deletion of a college.
+ * The user is asked to confirm the deletion of a college, alongside any students that are associated with the college.
+ * If the user confirms the deletion, the form is submitted.
+ */
 document.querySelectorAll('#btn-delete').forEach((button) => {
     button.addEventListener('click', function (event) {
         event.preventDefault();
@@ -11,6 +16,11 @@ document.querySelectorAll('#btn-delete').forEach((button) => {
     });
 });
 
+/**
+ * This function is used to time out the alert messages that are displayed on the college views.
+ * The alert messages are displayed for 3 seconds before they are hidden.
+ * This function is used to hide the alert messages after 3 seconds.
+ */
 document.addEventListener('DOMContentLoaded', function () {
     const msg = document.getElementById('msg');
     const alert = document.getElementById('alert');
